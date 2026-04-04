@@ -3,7 +3,7 @@
     <div class="flex items-center">
       <img src="./src/assets/logo.png" alt="Sklad Logo" class="w-12">
       <div class="flex items-center">
-        <p class="text-xl md:text-2xl font-bold font-mono">Sklad.</p>
+        <p class="text-2xl font-bold font-mono">Sklad.</p>
         <span class="inline-flex items-center rounded-xl bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 inset-ring inset-ring-blue-700/10">prototype</span>
       </div>
     </div>
