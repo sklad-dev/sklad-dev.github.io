@@ -41,11 +41,11 @@
       <div class="font-extrabold uppercase">observability</div>
     </FeatureCard>
     <FeatureCard>
-      <div class="text-3xl">P99</div>
-      <div class="font-extrabold uppercase">&lt; 2ms</div>
+      <div class="text-2xl md:text-3xl">P99<sup class="">*</sup></div>
+      <div class="font-extrabold uppercase">&lt; 2ms&nbsp;</div>
     </FeatureCard>
     <FeatureCard>
-      <div class="text-3xl">P50/P99</div>
+      <div class="text-2xl md:text-3xl">P50/P99<sup>*</sup></div>
       <div class="font-extrabold uppercase">&lt; 80%</div>
     </FeatureCard>
   </div>
