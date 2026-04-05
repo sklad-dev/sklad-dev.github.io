@@ -22,7 +22,7 @@
       </Paragraph>
       <div class="px-8 mb-4 w-full">
         <div class="overflow-x-auto text-left border border-black py-2 bg-slate-50">
-  <pre class="font-mono text-base"><code>  <span class="text-[#ee0066] select-none">$</span> git clone https://github.com/sklad-db/Sklad.git
+  <pre class="font-mono text-base"><code>  <span class="text-[#ee0066] select-none">$</span> git clone https://github.com/sklad-dev/Sklad.git
   <span class="text-[#ee0066] select-none">$</span> cd Sklad
   <span class="text-[#ee0066] select-none">$</span> zig build --release=safe
   <span class="text-[#ee0066] select-none">$</span> ./zig-out/bin/sklad</code></pre>
@@ -43,7 +43,7 @@
       Built-in observability
     </Paragraph>
     <Paragraph class="text-base">
-      Sklad has metrics collection as a core feature. The prototype exposes internal statistics that can be visualized through a web dashboard.
+      Metrics collection is a core feature. The prototype exposes internal statistics that can be visualized through a web dashboard.
     </Paragraph>
     <div class="px-8 my-4 w-full">
       <img src="./src/assets/metrics-dashboard.png" alt="Metrics Dashboard screenshot" class="border-8">
@@ -51,9 +51,12 @@
     <Paragraph class="text-2xl font-extrabold mt-2 md:mt-4">
       <span class="text-[#ee0066]">sklient</span> - a CLI tool
     </Paragraph>
+    <Paragraph class="text-base">
+      A terminal UI client for querying Sklad.
+    </Paragraph>
     <div class="px-8 mb-4 w-full">
       <div class="overflow-x-auto text-left border border-black py-2 bg-slate-50">
-<pre class="font-mono text-base"><code>  <span class="text-[#ee0066] select-none">$</span> git clone https://github.com/sklad-db/sklient.git
+<pre class="font-mono text-base"><code>  <span class="text-[#ee0066] select-none">$</span> git clone https://github.com/sklad-dev/sklient.git
   <span class="text-[#ee0066] select-none">$</span> cd sklient
   <span class="text-[#ee0066] select-none">$</span> zig build --release=safe
   <span class="text-[#ee0066] select-none">$</span> ./zig-out/bin/sklient</code></pre>
