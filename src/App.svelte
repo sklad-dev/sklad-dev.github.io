@@ -45,14 +45,20 @@
     <Paragraph class="text-base">
       Metrics collection is a core feature. The prototype exposes internal statistics that can be visualized through a web dashboard.
     </Paragraph>
-    <div class="px-8 my-4 w-full">
-      <img src="./src/assets/metrics-dashboard.png" alt="Metrics Dashboard screenshot" class="border-8">
+    <div class="px-8 mb-8 w-full">
+      <img src="./src/assets/metrics-dashboard.png" alt="Metrics Dashboard screenshot" class="shadow-lg shadow-gray-500 rounded-xl">
     </div>
     <Paragraph class="text-2xl font-extrabold mt-2 md:mt-4">
       <span class="text-[#ee0066]">sklient</span> - a CLI tool
     </Paragraph>
     <Paragraph class="text-base">
       A terminal UI client for querying Sklad.
+    </Paragraph>
+    <div class="px-8 mb-8 w-full">
+      <img src="./src/assets/sklient.png" alt="sklient screenshot" class="shadow-lg shadow-gray-500 rounded-xl">
+    </div>
+    <Paragraph class="text-xl font-extrabold">
+      Try it out:
     </Paragraph>
     <div class="px-8 mb-4 w-full">
       <div class="overflow-x-auto text-left border border-black py-2 bg-slate-50">
