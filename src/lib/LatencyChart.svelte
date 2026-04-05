@@ -19,9 +19,9 @@
             {
               label: 'p50',
               data: [379, 736, 1352],
-              backgroundColor: 'rgba(0, 153, 255, 0.7)',
-              hoverBackgroundColor: 'rgba(0, 153, 255, 1)',
-              borderRadius: 6,
+              backgroundColor: 'rgba(204, 255, 0, 0.7)',
+              hoverBackgroundColor: 'rgba(204, 255, 0, 1)',
+              borderRadius: 0,
               borderSkipped: false,
               barPercentage: 0.85,
               categoryPercentage: 0.7
@@ -29,9 +29,9 @@
             {
               label: 'p95',
               data: [446, 843, 1592],
-              backgroundColor: 'rgba(17, 68, 255, 0.7)',
-              hoverBackgroundColor: 'rgba(17, 68, 255, 1)',
-              borderRadius: 6,
+              backgroundColor: 'rgba(34, 0, 204, 0.7)',
+              hoverBackgroundColor: 'rgba(34, 0, 204, 1)',
+              borderRadius: 0,
               borderSkipped: false,
               barPercentage: 0.85,
               categoryPercentage: 0.7
@@ -39,9 +39,9 @@
             {
               label: 'p99',
               data: [476, 892, 1700],
-              backgroundColor: 'rgba(34, 0, 204, 0.7)',
-              hoverBackgroundColor: 'rgba(34, 0, 204, 1)',
-              borderRadius: 6,
+              backgroundColor: 'rgba(238, 0, 102, 0.7)',
+              hoverBackgroundColor: 'rgba(238, 0, 102, 1)',
+              borderRadius: 0,
               borderSkipped: false,
               barPercentage: 0.85,
               categoryPercentage: 0.7
