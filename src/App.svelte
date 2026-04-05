@@ -8,7 +8,7 @@
 
 <div class="w-screen text-slate-900 font-mono antialiased">
   <Header />
-  <div class="w-full flex flex-col items-center py-8 bg-linear-to-br from-[#ee0066]/80 to-[#ccff00]/80 to-90%">
+  <div class="w-full flex flex-col items-center pt-8 pb-16 bg-linear-to-br from-[#ee0066]/80 to-[#ccff00]/80 to-90%">
     <div class="w-full md:max-w-3xl">
       <Paragraph class="text-4xl font-extrabold">
         A Lightweight Key-Value Database Built in Zig
@@ -32,7 +32,7 @@
       </div>
     </div>
   </div>
-  <div class="w-full px-8 pt-8 flex flex-row flex-wrap sm:flex-nowrap items-center justify-center gap-6 mx-auto max-w-3xl text-white">
+  <div class="relative z-10 w-full px-8 -mt-8 flex flex-row flex-wrap sm:flex-nowrap items-center justify-center gap-6 mx-auto max-w-3xl text-white">
     <FeatureCard>
       <div class="font-extrabold uppercase">Asynchronous</div>
     </FeatureCard>
