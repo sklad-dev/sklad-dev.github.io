@@ -123,5 +123,5 @@
 </script>
 
 <div class="px-8 py-4 mb-4 w-full min-h-92">
-  <canvas bind:this={latencyChart} class="p-4 shadow-lg shadow-gray-500 rounded-xl"></canvas>
+  <canvas bind:this={latencyChart} class="p-4 shadow-lg shadow-gray-500"></canvas>
 </div>

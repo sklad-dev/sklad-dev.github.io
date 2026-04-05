@@ -2,6 +2,8 @@
   import Header from './lib/Header.svelte';
   import Paragraph from './lib/Paragraph.svelte';
   import LatencyChart from './lib/LatencyChart.svelte';
+  import ImageContainer from './lib/ImageContainer.svelte';
+  import FeatureCard from './lib/FeatureCard.svelte';
 </script>
 
 <div class="w-screen text-slate-900 font-mono antialiased">
@@ -18,7 +20,7 @@
         Currently a prototype. The long-term direction is to explore use in <span class="font-extrabold">IoT</span> and <span class="font-extrabold">edge</span> environments.
       </Paragraph>
       <Paragraph class="text-2xl font-extrabold mt-2 md:mt-4">
-        Building & running
+        Installation
       </Paragraph>
       <div class="px-8 mb-4 w-full">
         <div class="overflow-x-auto text-left border border-black py-2 bg-slate-50">
@@ -30,8 +32,25 @@
       </div>
     </div>
   </div>
+  <div class="w-full px-8 pt-8 flex flex-row flex-wrap sm:flex-nowrap items-center justify-center gap-6 mx-auto max-w-3xl text-white">
+    <FeatureCard>
+      <div class="font-extrabold uppercase">Asynchronous</div>
+    </FeatureCard>
+    <FeatureCard>
+      <div class="font-extrabold uppercase">Built-in</div>
+      <div class="font-extrabold uppercase">observability</div>
+    </FeatureCard>
+    <FeatureCard>
+      <div class="text-3xl">P99</div>
+      <div class="font-extrabold uppercase">&lt; 2ms</div>
+    </FeatureCard>
+    <FeatureCard>
+      <div class="text-3xl">P50/P99</div>
+      <div class="font-extrabold uppercase">&lt; 80%</div>
+    </FeatureCard>
+  </div>
   <div class="w-full pt-8 pb-24 flex flex-col items-center mx-auto max-w-3xl">
-    <Paragraph class="text-2xl font-extrabold mt-2 md:mt-4">
+    <Paragraph class="text-4xl font-extrabold mt-2 md:mt-4">
       Performance
     </Paragraph>
     <Paragraph class="text-base">
@@ -39,34 +58,19 @@
       The latencies were measured on the client side. Results are indicative only and not representative of production or edge environments.
     </Paragraph>
     <LatencyChart/>
-    <Paragraph class="text-2xl font-extrabold mt-2 md:mt-4">
+    <Paragraph class="text-4xl font-extrabold mt-2 md:mt-4">
       Built-in observability
     </Paragraph>
     <Paragraph class="text-base">
       Metrics collection is a core feature. The prototype exposes internal statistics that can be visualized through a web dashboard.
     </Paragraph>
-    <div class="px-8 mb-8 w-full">
-      <img src="./src/assets/metrics-dashboard.png" alt="Metrics Dashboard screenshot" class="shadow-lg shadow-gray-500 rounded-xl">
-    </div>
-    <Paragraph class="text-2xl font-extrabold mt-2 md:mt-4">
-      <span class="text-[#ee0066]">sklient</span> - a CLI tool
+    <ImageContainer imageLink="./src/assets/metrics-dashboard.png" />
+    <Paragraph class="text-4xl font-extrabold mt-2 md:mt-4">
+      <span class="text-[#ee0066]">sklient</span>
     </Paragraph>
     <Paragraph class="text-base">
       A terminal UI client for querying Sklad.
     </Paragraph>
-    <div class="px-8 mb-8 w-full">
-      <img src="./src/assets/sklient.png" alt="sklient screenshot" class="shadow-lg shadow-gray-500 rounded-xl">
-    </div>
-    <Paragraph class="text-xl font-extrabold">
-      Try it out:
-    </Paragraph>
-    <div class="px-8 mb-4 w-full">
-      <div class="overflow-x-auto text-left border border-black py-2 bg-slate-50">
-<pre class="font-mono text-base"><code>  <span class="text-[#ee0066] select-none">$</span> git clone https://github.com/sklad-dev/sklient.git
-  <span class="text-[#ee0066] select-none">$</span> cd sklient
-  <span class="text-[#ee0066] select-none">$</span> zig build --release=safe
-  <span class="text-[#ee0066] select-none">$</span> ./zig-out/bin/sklient</code></pre>
-        </div>
-    </div>
+    <ImageContainer imageLink="./src/assets/sklient.png" />
   </div>
 </div>
