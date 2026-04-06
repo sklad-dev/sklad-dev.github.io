@@ -10,13 +10,13 @@
   <Header />
   <div class="w-full flex flex-col items-center pt-8 pb-16 bg-linear-to-br from-[#ee0066]/80 to-[#ccff00]/80 to-90%">
     <div class="w-full md:max-w-3xl">
-      <Paragraph class="text-4xl font-extrabold">
+      <Paragraph class="text-4xl md:text-5xl font-extrabold tracking-tight">
         A Lightweight Key-Value Database Built in Zig
       </Paragraph>
-      <Paragraph class="text-base">
+      <Paragraph class="text-base" leading='relaxed'>
         Inspired by event-driven systems, Sklad uses an <span class="font-extrabold">asynchronous</span> task queue and <span class="font-extrabold">lock-free</span> data structures to achieve predictable performance and low tail latencies.
       </Paragraph>
-      <Paragraph class="text-base">
+      <Paragraph class="text-base" leading='relaxed'>
         Currently a prototype. The long-term direction is to explore use in <span class="font-extrabold">IoT</span> and <span class="font-extrabold">edge</span> environments.
       </Paragraph>
       <Paragraph class="text-2xl font-extrabold mt-2 md:mt-4">
@@ -34,41 +34,41 @@
   </div>
   <div class="relative z-10 w-full px-8 -mt-8 flex flex-row flex-wrap sm:flex-nowrap items-center justify-center gap-6 mx-auto max-w-3xl text-white">
     <FeatureCard>
-      <div class="font-extrabold uppercase">Asynchronous</div>
+      <div class="font-bold uppercase tracking-wide">Asynchronous</div>
     </FeatureCard>
     <FeatureCard>
       <div class="font-extrabold uppercase">Built-in</div>
       <div class="font-extrabold uppercase">observability</div>
     </FeatureCard>
     <FeatureCard>
-      <div class="text-2xl md:text-3xl">P99<sup class="">*</sup></div>
-      <div class="font-extrabold uppercase">&lt; 2ms&nbsp;</div>
+      <div class="text-sm font-semibold uppercase tracking-wider">P99<sup>*</sup></div>
+      <div class="text-2xl md:text-3xl font-bold">&lt;2ms</div>
     </FeatureCard>
     <FeatureCard>
-      <div class="text-2xl md:text-3xl">P50/P99<sup>*</sup></div>
-      <div class="font-extrabold uppercase">&lt; 80%</div>
+      <div class="text-sm font-semibold uppercase tracking-wider">P50/P99<sup>*</sup></div>
+      <div class="text-2xl md:text-3xl font-bold">&lt;80%</div>
     </FeatureCard>
   </div>
   <div class="w-full pt-8 pb-24 flex flex-col items-center mx-auto max-w-3xl">
-    <Paragraph class="text-4xl font-extrabold mt-2 md:mt-4">
+    <Paragraph class="text-2xl md:text-3xl font-extrabold tracking-tight mt-4 md:mt-8">
       Performance
     </Paragraph>
-    <Paragraph class="text-base">
+    <Paragraph class="text-base" leading='relaxed'>
       Preliminary benchmark was done on a laptop using synthetic workload simulating the sensors data.
       The latencies were measured on the client side. Results are indicative only and not representative of production or edge environments.
     </Paragraph>
     <LatencyChart/>
-    <Paragraph class="text-4xl font-extrabold mt-2 md:mt-4">
+    <Paragraph class="text-2xl md:text-3xl font-extrabold tracking-tight mt-4 md:mt-8">
       Built-in observability
     </Paragraph>
-    <Paragraph class="text-base">
+    <Paragraph class="text-base" leading='relaxed'>
       Metrics collection is a core feature. The prototype exposes internal statistics that can be visualized through a web dashboard.
     </Paragraph>
     <ImageContainer imageLink="./src/assets/metrics-dashboard.png" />
-    <Paragraph class="text-4xl font-extrabold mt-2 md:mt-4">
+    <Paragraph class="text-2xl md:text-3xl font-extrabold tracking-tight mt-4 md:mt-8">
       <span class="text-[#ee0066]">sklient</span>
     </Paragraph>
-    <Paragraph class="text-base">
+    <Paragraph class="text-base" leading='relaxed'>
       A terminal UI client for querying Sklad.
     </Paragraph>
     <ImageContainer imageLink="./src/assets/sklient.png" />
