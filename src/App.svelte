@@ -4,13 +4,15 @@
   import LatencyChart from './lib/LatencyChart.svelte';
   import ImageContainer from './lib/ImageContainer.svelte';
   import FeatureCard from './lib/FeatureCard.svelte';
+  import Carousel from './lib/Carousel.svelte';
+  import TerminalWindowFrame from './lib/TerminalWindowFrame.svelte';
 </script>
 
-<div class="w-screen text-slate-900 font-mono antialiased">
+<div class="w-full text-slate-900 font-mono antialiased">
   <Header />
   <div class="w-full flex flex-col items-center pt-8 pb-16 bg-linear-to-br from-[#ccff00] to-[#2200cc]/80 from-10%">
     <div class="w-full md:max-w-3xl">
-      <Paragraph class="text-4xl md:text-5xl font-extrabold tracking-tight">
+      <Paragraph class="text-4xl md:text-5xl font-semibold tracking-tight">
         A Lightweight Key-Value Database Built in Zig
       </Paragraph>
       <Paragraph class="text-base" leading='relaxed'>
@@ -19,7 +21,7 @@
       <Paragraph class="text-base" leading='relaxed'>
         Currently a prototype. The long-term direction is to explore use in <span class="font-extrabold">IoT</span> and <span class="font-extrabold">edge</span> environments.
       </Paragraph>
-      <Paragraph class="text-2xl md:text-3xl font-extrabold tracking-tight mt-2 md:mt-4">
+      <Paragraph class="text-2xl md:text-3xl font-semibold tracking-tight mt-2 md:mt-4">
         Installation
       </Paragraph>
       <div class="px-8 mb-4 w-full">
@@ -55,7 +57,7 @@
     </Paragraph>
   </div>
   <div class="w-full flex flex-col items-center mx-auto max-w-3xl">
-    <Paragraph class="text-3xl md:text-4xl font-extrabold tracking-tight mt-4 md:mt-6">
+    <Paragraph class="text-3xl md:text-4xl font-semibold tracking-tight mt-4 md:mt-6">
       Performance
     </Paragraph>
     <Paragraph class="text-base" leading='relaxed'>
@@ -63,7 +65,7 @@
       The latencies were measured on the client side. Results are indicative only and not representative of production or edge environments.
     </Paragraph>
     <LatencyChart/>
-    <Paragraph class="text-3xl md:text-4xl font-extrabold tracking-tight mt-4 md:mt-8">
+    <Paragraph class="text-3xl md:text-4xl font-semibold tracking-tight mt-4 md:mt-8">
       Built-in observability
     </Paragraph>
     <Paragraph class="text-base" leading='relaxed'>
@@ -73,7 +75,7 @@
   </div>
   <div class="w-full flex flex-col items-center pt-8 pb-12 bg-linear-to-br from-[#2200cc] to-[#ee0066] text-white">
     <div class="w-full md:max-w-3xl">
-      <Paragraph class="text-3xl md:text-4xl font-extrabold tracking-tight">
+      <Paragraph class="text-3xl md:text-4xl font-semibold tracking-tight">
         <span class="text-[#ccff00]">sklient</span>
       </Paragraph>
       <Paragraph class="text-base" leading='relaxed'>
@@ -83,14 +85,14 @@
         Two modes: <span class="font-extrabold">TUI mode</span> guides you through queries with structured input elements, while <span class="font-extrabold">Raw mode</span> lets you freely type queries directly.
       </Paragraph>
       <div class="px-8 py-4 w-full">
-        <div class="rounded-lg overflow-hidden shadow-2xl shadow-black/50">
-          <div class="bg-[#1e1e1e] px-4 py-2 flex items-center gap-2">
-            <div class="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
-            <div class="w-3 h-3 rounded-full bg-[#febc2e]"></div>
-            <div class="w-3 h-3 rounded-full bg-[#28c840]"></div>
-          </div>
-          <img src="./src/assets/sklient.png" alt="sklient terminal UI" class="w-full block">
-        </div>
+        <Carousel class="rounded-lg shadow-2xl shadow-black/50">
+          <TerminalWindowFrame>
+            <img src="./src/assets/sklient-tui.png" alt="sklient terminal UI - TUI mode" class="w-full block">
+          </TerminalWindowFrame>
+          <TerminalWindowFrame>
+            <img src="./src/assets/sklient-raw.png" alt="sklient terminal UI - raw mode" class="w-full block">
+          </TerminalWindowFrame>
+        </Carousel>
       </div>
     </div>
   </div>
