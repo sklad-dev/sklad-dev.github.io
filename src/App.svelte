@@ -6,6 +6,7 @@
   import FeatureCard from './lib/FeatureCard.svelte';
   import Carousel from './lib/Carousel.svelte';
   import TerminalWindowFrame from './lib/TerminalWindowFrame.svelte';
+  import GithubButton from './lib/GithubButton.svelte';
 </script>
 
 <div class="w-full text-slate-900 font-mono antialiased">
@@ -74,7 +75,7 @@
     <ImageContainer imageLink="./src/assets/metrics-dashboard.png" />
   </div>
   <div class="w-full flex flex-col items-center pt-8 pb-12 bg-linear-to-br from-[#2200cc] to-[#ee0066] text-white">
-    <div class="w-full md:max-w-3xl">
+    <div class="w-full flex flex-col items-center md:max-w-3xl">
       <Paragraph class="text-3xl md:text-4xl font-semibold tracking-tight">
         <span class="text-[#ccff00]">sklient</span>
       </Paragraph>
@@ -94,6 +95,7 @@
           </TerminalWindowFrame>
         </Carousel>
       </div>
+      <GithubButton class="px-8 mt-6 mb-2" />
     </div>
   </div>
   <footer class="w-full py-4 flex flex-col items-center gap-2 bg-black text-white">
