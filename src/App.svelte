@@ -38,7 +38,7 @@
   <div class="relative z-10 w-full px-8 -mt-10 flex flex-row flex-wrap sm:flex-nowrap items-center justify-center gap-6 mx-auto max-w-3xl text-white">
     <FeatureCard>
       <div class="font-bold uppercase tracking-wide">Asynchronous</div>
-      <div class="font-bold uppercase tracking-wide">architechture</div>
+      <div class="font-bold uppercase tracking-wide">architecture</div>
     </FeatureCard>
     <FeatureCard>
       <div class="font-extrabold uppercase">Built-in</div>
@@ -59,8 +59,8 @@
     </Paragraph>
   </div>
   <div class="w-full flex flex-col items-center mx-auto max-w-3xl">
-    <GithubButton class="px-8 my-6" />
-    <Paragraph class="text-3xl md:text-4xl font-semibold tracking-tight mt-4 md:mt-6">
+    <GithubButton class="px-8 mt-8 mb-2" />
+    <Paragraph class="text-3xl md:text-4xl font-semibold tracking-tight mt-4 md:mt-8">
       Performance
     </Paragraph>
     <Paragraph class="text-base" leading='relaxed'>
