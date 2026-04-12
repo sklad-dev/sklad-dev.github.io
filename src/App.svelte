@@ -7,6 +7,7 @@
   import Carousel from './lib/Carousel.svelte';
   import TerminalWindowFrame from './lib/TerminalWindowFrame.svelte';
   import GithubButton from './lib/GithubButton.svelte';
+  import InstallCommand from './lib/InstallCommand.svelte';
 </script>
 
 <div class="w-full text-slate-900 font-mono antialiased">
@@ -23,21 +24,21 @@
         Currently a prototype. The long-term direction is to explore use in <span class="font-extrabold">IoT</span> and <span class="font-extrabold">edge</span> environments.
       </Paragraph>
       <Paragraph class="text-2xl md:text-3xl font-semibold tracking-tight mt-2 md:mt-4">
-        Installation
+        Get started
       </Paragraph>
-      <div class="px-8 mb-4 w-full">
-        <div class="overflow-x-auto text-left border border-black py-2 bg-slate-50">
-  <pre class="font-mono text-base"><code>  <span class="text-[#ee0066] select-none">$</span> git clone https://github.com/sklad-dev/Sklad.git
-  <span class="text-[#ee0066] select-none">$</span> cd Sklad
-  <span class="text-[#ee0066] select-none">$</span> zig build --release=safe
-  <span class="text-[#ee0066] select-none">$</span> ./zig-out/bin/sklad</code></pre>
-          </div>
+      <div class="px-8 mb-2 w-full">
+        <InstallCommand />
+        <div class="flex justify-between text-xs text-gray-700 mt-2 font-medium">
+          <span>Latest release: <a href="https://github.com/sklad-dev/Sklad/releases" target="_blank" rel="noopener noreferrer" class="underline hover:text-gray-900 transition-colors">0.1.0</a></span>
+          <span>Apache License, Version 2.0</span>
+        </div>
       </div>
     </div>
   </div>
   <div class="relative z-10 w-full px-8 -mt-10 flex flex-row flex-wrap sm:flex-nowrap items-center justify-center gap-6 mx-auto max-w-3xl text-white">
     <FeatureCard>
       <div class="font-bold uppercase tracking-wide">Asynchronous</div>
+      <div class="font-bold uppercase tracking-wide">architechture</div>
     </FeatureCard>
     <FeatureCard>
       <div class="font-extrabold uppercase">Built-in</div>
@@ -58,6 +59,7 @@
     </Paragraph>
   </div>
   <div class="w-full flex flex-col items-center mx-auto max-w-3xl">
+    <GithubButton class="px-8 my-6" />
     <Paragraph class="text-3xl md:text-4xl font-semibold tracking-tight mt-4 md:mt-6">
       Performance
     </Paragraph>
