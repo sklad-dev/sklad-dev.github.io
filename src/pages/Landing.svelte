@@ -14,7 +14,7 @@
 
 <div class="w-full flex flex-col items-center pt-8 pb-16 bg-linear-to-br from-[#ccff00] to-[#2200cc]/80 from-10%">
   <div class="w-full md:max-w-3xl">
-    <Paragraph class="text-4xl md:text-5xl font-semibold tracking-tight">
+    <Paragraph class="text-4xl md:text-5xl font-extrabold tracking-tight">
       A Lightweight Key-Value Database Built in Zig
     </Paragraph>
     <Paragraph class="text-base" leading='relaxed'>
@@ -23,7 +23,7 @@
     <Paragraph class="text-base" leading='relaxed'>
       Currently a prototype. The long-term direction is to explore use in <span class="font-extrabold">IoT</span> and <span class="font-extrabold">edge</span> environments.
     </Paragraph>
-    <Paragraph class="text-3xl md:text-4xl font-extrabold tracking-tight mt-2 md:mt-4">
+    <Paragraph class="text-3xl md:text-4xl font-semibold tracking-tight mt-2 md:mt-4">
       Get started
     </Paragraph>
     <div class="px-8 mb-2 w-full">
