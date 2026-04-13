@@ -2,11 +2,14 @@
   import Carousel from '../lib/Carousel.svelte';
   import FeatureCard from '../lib/FeatureCard.svelte';
   import GithubButton from '../lib/GithubButton.svelte';
-  import ImageContainer from '../lib/ImageContainer.svelte';
   import InstallCommand from '../lib/InstallCommand.svelte';
   import LatencyChart from '../lib/LatencyChart.svelte';
   import Paragraph from '../lib/Paragraph.svelte';
   import TerminalWindowFrame from '../lib/TerminalWindowFrame.svelte';
+
+  import metricsDashboardImg from '../assets/metrics-dashboard.png';
+  import sklientTuiImg from '../assets/sklient-tui.png';
+  import sklientRawImg from '../assets/sklient-raw.png';
 </script>
 
 <div class="w-full flex flex-col items-center pt-8 pb-16 bg-linear-to-br from-[#ccff00] to-[#2200cc]/80 from-10%">
@@ -71,7 +74,9 @@
   <Paragraph class="text-base" leading='relaxed'>
     Metrics collection is a core feature. The prototype exposes internal statistics that can be visualized through a web dashboard.
   </Paragraph>
-  <ImageContainer imageLink="./src/assets/metrics-dashboard.png" />
+  <div class="px-8 py-4 mb-8 w-full">
+    <img src={metricsDashboardImg} alt="sklient screenshot" class="shadow-lg shadow-gray-500">
+  </div>
 </div>
 <div class="w-full flex flex-col items-center pt-8 pb-12 bg-linear-to-br from-[#2200cc] to-[#ee0066] text-white">
   <div class="w-full flex flex-col items-center md:max-w-3xl">
@@ -87,10 +92,10 @@
     <div class="px-8 py-4 w-full">
       <Carousel class="rounded-lg shadow-2xl shadow-black/50">
         <TerminalWindowFrame>
-          <img src="./src/assets/sklient-tui.png" alt="sklient terminal UI - TUI mode" class="w-full block">
+          <img src={sklientTuiImg} alt="sklient terminal UI - TUI mode" class="w-full block">
         </TerminalWindowFrame>
         <TerminalWindowFrame>
-          <img src="./src/assets/sklient-raw.png" alt="sklient terminal UI - raw mode" class="w-full block">
+          <img src={sklientRawImg} alt="sklient terminal UI - raw mode" class="w-full block">
         </TerminalWindowFrame>
       </Carousel>
     </div>

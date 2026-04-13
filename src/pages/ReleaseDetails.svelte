@@ -6,14 +6,14 @@
 <div class="w-full flex flex-col items-start mx-auto max-w-3xl mt-2 mb-20">
   <Paragraph leading='relaxed' class="mb-6">
     <a href="#/release-notes" class="hover:underline hover:text-gray-700 transition-colors">
-      &#8592; Release notes
+      &#8592; All release notes
     </a>
   </Paragraph>
   <Paragraph class="text-sm text-gray-700 font-medium" leading='relaxed'>
     April 12, 2026
   </Paragraph>
   <Paragraph class="text-2xl md:text-3xl font-semibold tracking-tight">
-    0.1.0 Release Notes
+    0.1.0 Release notes
   </Paragraph>
   <Paragraph leading='relaxed'>
     <a href="https://github.com/sklad-dev/Sklad/releases/tag/0.1.0"
@@ -40,7 +40,7 @@
     There are known gaps and likely undiscovered bugs. Stress testing has not been done at scale, and several features considered essential for a stable 1.0
     release are still on the roadmap.
   </Paragraph>
-  <Paragraph class="text-base" leading='relaxed'>
+  <Paragraph class="text-base italic" leading='relaxed'>
     Speaking of which…
   </Paragraph>
   <Paragraph class="text-lg md:text-xl font-semibold tracking-tight border-l-4 border-[#ccff00]">
