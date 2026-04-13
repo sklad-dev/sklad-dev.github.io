@@ -25,7 +25,7 @@
     <span class="font-bold">The first Sklad release is out!</span> But beware, the project is still in its prototype stage, meaning that the core architecture is in place and the database is usable,
     however, it is not yet production-ready. There are an unknown number of bugs and untested edge cases, all of which need to be surfaced through rigorous stress testing.
   </Paragraph>
-  <Paragraph class="text-lg md:text-xl font-semibold tracking-tight border-l-4 border-[#ccff00]">
+  <Paragraph class="text-lg md:text-xl font-semibold tracking-tight border-l-8 border-[#ccff00]">
     What's included today?
   </Paragraph>
   <Paragraph class="text-base" leading='relaxed'>
@@ -33,7 +33,7 @@
     Under the hood, it uses an LSM-tree with a lock-free skip-list memtable, simple tiered compaction, and an asynchronous non-blocking I/O model
     backed by a dynamic worker pool.
   </Paragraph>
-  <Paragraph class="text-lg md:text-xl font-semibold tracking-tight border-l-4 border-[#ccff00]">
+  <Paragraph class="text-lg md:text-xl font-semibold tracking-tight border-l-8 border-[#ccff00]">
     What's still missing?
   </Paragraph>
   <Paragraph class="text-base" leading='relaxed'>
@@ -43,7 +43,7 @@
   <Paragraph class="text-base italic" leading='relaxed'>
     Speaking of which…
   </Paragraph>
-  <Paragraph class="text-lg md:text-xl font-semibold tracking-tight border-l-4 border-[#ccff00]">
+  <Paragraph class="text-lg md:text-xl font-semibold tracking-tight border-l-8 border-[#ccff00]">
     The roadmap to 1.0
   </Paragraph>
   <Paragraph class="text-base" leading='relaxed'>
@@ -53,11 +53,11 @@
   <Paragraph class="text-base" leading='relaxed'>
     Beyond testing, the following features are considered must-haves for 1.0:
   </Paragraph>
-  <ul class="leading-relaxed text-base px-8 mb-4 w-full list-disc ml-8">
+  <ul class="leading-relaxed text-base px-8 mb-4 list-disc ml-4">
     <li>Unix domain sockets support</li>
     <li>
       Data integrity checks
-      <ul class="list-disc ml-8">
+      <ul class="list-disc ml-4">
         <li>Per-record xxHash-3 checksums for WAL entries</li>
         <li>File-level xxHash-3 checksums for SSTable files</li>
         <li>SSTable completion marker to detect interrupted writes</li>
@@ -67,13 +67,13 @@
     <li>More advanced compaction strategies</li>
     <li>Client libraries for (but not limited to) C/C++, Rust, Go, Java and Python</li>
   </ul>
-  <Paragraph class="text-lg md:text-xl font-semibold tracking-tight border-l-4 border-[#ccff00]">
+  <Paragraph class="text-lg md:text-xl font-semibold tracking-tight border-l-8 border-[#ccff00]">
     Future work
   </Paragraph>
   <Paragraph class="text-base" leading='relaxed'>
     There is a list of features I have in mind, but I am not sure if they are necessary for the 1.0 release.
   </Paragraph>
-  <ul class="leading-relaxed text-base px-8 mb-4 w-full list-disc ml-8">
+  <ul class="leading-relaxed text-base px-8 mb-4 list-disc ml-4">
     <li>Key-value separation</li>
     <li>io_uring support for Linux version of Sklad</li>
   </ul>
