@@ -5,6 +5,9 @@
   let current = $state(0);
   let paused = $state(false);
 
+  let touchStartX = $state(0);
+  let touchEndX = $state(0);
+
   let track;
 
   $effect(() => {
@@ -19,17 +22,42 @@
     }, interval);
     return () => clearInterval(id);
   });
+
+  function handleTouchStart(e) {
+    paused = true;
+    touchStartX = e.changedTouches[0].screenX;
+  }
+
+  function handleTouchEnd(e) {
+    paused = false;
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }
+
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    if (touchEndX <= touchStartX - swipeThreshold) {
+      // Swipe left -> Next slide
+      current = (current + 1) % count;
+    }
+    if (touchEndX >= touchStartX + swipeThreshold) {
+      // Swipe right -> Previous slide
+      current = (current - 1 + count) % count;
+    }
+  }
 </script>
 
-<div role="region"
-     aria-roledescription="carousel"
-     aria-label="Carousel"
-     onmouseenter={() => (paused = true)}
-     onmouseleave={() => (paused = false)}
-     onfocusin={() => (paused = true)}
-     onfocusout={() => (paused = false)}
-     class="flex flex-col items-center">
-  <div class="w-full overflow-hidden {className}">
+<div class="flex flex-col items-center">
+  <div class="w-full overflow-hidden {className}"
+       role="region"
+       aria-roledescription="carousel"
+       aria-label="Carousel"
+       onmouseenter={() => (paused = true)}
+       onmouseleave={() => (paused = false)}
+       onfocusin={() => (paused = true)}
+       onfocusout={() => (paused = false)}
+       ontouchstart={handleTouchStart}
+       ontouchend={handleTouchEnd}>
     <div bind:this={track} class="track flex transition-transform duration-500 ease-in-out"
                            style="transform: translateX(-{current * 100}%)">
       {@render children()}

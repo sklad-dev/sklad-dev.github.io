@@ -23,14 +23,14 @@
     <Paragraph class="text-base" leading='relaxed'>
       Currently a prototype. The long-term direction is to explore use in <span class="font-extrabold">IoT</span> and <span class="font-extrabold">edge</span> environments.
     </Paragraph>
-    <Paragraph class="text-2xl md:text-3xl font-semibold tracking-tight mt-2 md:mt-4">
+    <Paragraph class="text-3xl md:text-4xl font-extrabold tracking-tight mt-2 md:mt-4">
       Get started
     </Paragraph>
     <div class="px-8 mb-2 w-full">
       <InstallCommand />
-      <div class="flex justify-between text-xs text-gray-700 mt-2 font-medium">
+      <div class="flex justify-between gap-1 text-xs text-gray-700 mt-2 font-medium">
         <span>Latest release: <a href="#/release-notes/0.1.0" class="underline hover:text-gray-900 transition-colors">0.1.0</a></span>
-        <span>Apache License, Version 2.0</span>
+        <span>Apache License 2.0</span>
       </div>
     </div>
   </div>
@@ -59,7 +59,7 @@
   </Paragraph>
 </div>
 <div class="w-full flex flex-col items-center mx-auto max-w-3xl">
-  <GithubButton class="px-8 mt-8 mb-2" />
+  <GithubButton class="px-8 mt-4 md:mt-8 mb-4" />
   <Paragraph class="text-3xl md:text-4xl font-semibold tracking-tight mt-4 md:mt-8">
     Performance
   </Paragraph>
