@@ -102,6 +102,6 @@
     <GithubButton class="px-8 mt-6 mb-2" />
   </div>
 </div>
-<footer class="w-full py-4 flex flex-col items-center gap-2 bg-black text-white">
+<footer class="w-full py-4 pb-[calc(1rem+env(safe-area-inset-bottom))] flex flex-col items-center gap-2 bg-black text-white">
   <p class="text-sm mx-4">Licensed under the Apache License, Version 2.0</p>
 </footer>

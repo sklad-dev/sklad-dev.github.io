@@ -3,7 +3,7 @@
   import logo from '../assets/logo.png';
 </script>
 
-<header class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md">
+<header class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md pt-[env(safe-area-inset-top)]">
   <div class="flex justify-between items-center py-4 px-6">
     <div class="flex flex-row items-center">
       <a href="/" class="cursor-pointer flex flex-row items-center">
