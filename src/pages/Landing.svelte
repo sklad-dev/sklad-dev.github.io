@@ -23,6 +23,7 @@
     <Paragraph class="text-base" leading='relaxed'>
       Currently a prototype. The long-term direction is to explore use in <span class="font-extrabold">IoT</span> and <span class="font-extrabold">edge</span> environments.
     </Paragraph>
+    <GithubButton class="flex justify-center w-full px-8 my-6 md:mt-8 md:pb-6" />
     <Paragraph class="text-3xl md:text-4xl font-semibold tracking-tight mt-2 md:mt-4">
       Get started
     </Paragraph>
@@ -59,7 +60,6 @@
   </Paragraph>
 </div>
 <div class="w-full flex flex-col items-center mx-auto max-w-3xl">
-  <GithubButton class="px-8 mt-4 md:mt-8 mb-4" />
   <Paragraph class="text-3xl md:text-4xl font-semibold tracking-tight mt-4 md:mt-8">
     Performance
   </Paragraph>
