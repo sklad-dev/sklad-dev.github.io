@@ -30,7 +30,7 @@
     <div class="px-8 mb-2 w-full">
       <InstallCommand />
       <div class="flex justify-between gap-1 text-xs text-gray-700 mt-2 font-medium">
-        <span>Latest release: <a href="#/release-notes/0.1.0" class="underline hover:text-gray-900 transition-colors">0.1.0</a></span>
+        <span>Latest release: <a href="#/posts/0.1.0" class="underline hover:text-gray-900 transition-colors">0.1.0</a></span>
         <span>Apache License 2.0</span>
       </div>
     </div>

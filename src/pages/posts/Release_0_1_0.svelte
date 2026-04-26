@@ -1,12 +1,12 @@
 <script>
-  import GithubButton from '../lib/GithubButton.svelte';
-  import Paragraph from '../lib/Paragraph.svelte';
+  import GithubButton from '../../lib/GithubButton.svelte';
+  import Paragraph from '../../lib/Paragraph.svelte';
 </script>
 
 <div class="w-full flex flex-col items-start mx-auto max-w-3xl mt-2 mb-20">
   <Paragraph leading='relaxed' class="mb-6">
-    <a href="#/release-notes" class="hover:underline hover:text-gray-700 transition-colors">
-      &#8592; All release notes
+    <a href="#/posts" class="hover:underline hover:text-gray-700 transition-colors">
+      &#8592; All posts
     </a>
   </Paragraph>
   <Paragraph class="text-sm text-gray-700 font-medium" leading='relaxed'>
