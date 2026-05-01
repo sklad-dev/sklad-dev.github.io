@@ -9,7 +9,7 @@
       <div class="flex items-center justify-between">
         <span class="text-xs font-medium uppercase tracking-widest">April 26, 2026</span>
       </div>
-      <p class="text-xl font-semibold tracking-tight bg-[#0022ff] text-white px-2 py-0.5 w-fit">WAL: an ongoing story</p>
+      <p class="text-xl font-semibold tracking-tight py-0.5 w-fit">WAL: an ongoing story</p>
       <p class="text-sm leading-relaxed">
         How Sklad's Write-Ahead Log implementation evolved.
       </p>
@@ -21,7 +21,7 @@
       <div class="flex items-center justify-between">
         <span class="text-xs font-medium uppercase tracking-widest">April 12, 2026</span>
       </div>
-      <p class="text-xl font-semibold tracking-tight bg-[#0022ff] text-white px-2 py-0.5 w-fit">0.1.0 release notes</p>
+      <p class="text-xl font-semibold tracking-tight py-0.5 w-fit">0.1.0 release notes</p>
       <p class="text-sm leading-relaxed">
         First prototype release. Implements set/get/delete, TTL, range queries, and built-in metrics.
       </p>

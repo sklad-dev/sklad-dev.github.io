@@ -47,7 +47,7 @@
     }
 }`;
 
-  const forthWalVersionCode =
+  const fourthWalVersionCode =
 `pub fn writeRecord(self: *Wal, record: *const StorageRecord) !void {
     const record_size = record.sizeInMemory();
 
@@ -80,8 +80,8 @@
                 self.is_flushing.store(false, .release);
                 self.sync_cond.broadcast();
                 self.sync_mutex.unlock();
-                std.log.err("Error! Wal syncronization failed: {any}", .{e});
-                return WalError.SyncronizationError;
+                std.log.err("Error! Wal synchronization failed: {any}", .{e});
+                return WalError.SynchronizationError;
             };
 
             self.sync_mutex.lock();
@@ -103,17 +103,17 @@
     </a>
   </Paragraph>
   <Paragraph class="text-sm text-gray-700 font-medium" leading='relaxed'>
-    April 12, 2026
+    May 1, 2026
   </Paragraph>
   <Paragraph class="text-2xl md:text-3xl font-semibold tracking-tight">
     WAL: an ongoing story
   </Paragraph>
   <Paragraph class="text-base" leading='relaxed'>
-    One of the main design goals of Sklad is to rely as much as possible on lock-free data structures and algorithms.
-    Currently, the only place where I do use locking is when I write data to the write-ahead log.
+    One of the main design ideas behind Sklad is to use lock-free data structures. Currently, the only place where locking is used is
+    when data is written to the write-ahead log.
   </Paragraph>
   <Paragraph class="text-base" leading='relaxed'>
-    I have a <code class="bg-gray-200 px-1.5 py-0.5 rounded font-mono text-sm">Wal</code> struct that manages the write-ahead log file.
+    Sklad uses a <code class="bg-gray-200 px-1.5 py-0.5 rounded font-mono text-sm">Wal</code> struct that manages the write-ahead log file.
     It exposes a <code class="bg-gray-200 px-1.5 py-0.5 rounded font-mono text-sm">writeRecord</code> method that writes data to the file.
   </Paragraph>
   <Paragraph class="text-base" leading='relaxed'>
@@ -123,14 +123,14 @@
 <pre class="overflow-x-auto bg-gray-200 px-6 py-3 rounded text-sm leading-relaxed font-mono"><code>{firstWalVersionCode}</code></pre>
   </Paragraph>
   <Paragraph class="text-base" leading='relaxed'>
-    You can spot a few issues with this implementation. The main one is that I wasn't synchronizing writes with the underlying filesystem.
-    But it works! If you don't care much about durability and crash recovery, it works. And since there are no
-    <code class="bg-gray-200 px-1.5 py-0.5 rounded font-mono text-sm">fsync</code> calls, the performance is pretty decent.
+    You can spot a few issues with this implementation. The main one is that it didn't synchronize writes with the underlying filesystem.
+    The code does work, in the sense that the database can operate that way. But without durability or crash recovery guarantees, the WAL loses most of its point.
+    Also, since there are no <code class="bg-gray-200 px-1.5 py-0.5 rounded font-mono text-sm">fsync</code> calls, the performance is pretty good.
   </Paragraph>
   <Paragraph class="text-base" leading='relaxed'>
-    I wrote a tool in Go to measure request latencies. I tested the database using <span class="font-bold">32 parallel connections</span>,
-    sending <span class="font-bold">5 million requests</span> total with a <span class="font-bold">90/10 write-to-read</span> requests ratio.
-    The results for the initial <code class="bg-gray-200 px-1.5 py-0.5 rounded font-mono text-sm">writeRecord</code> verison were:
+    To measure request latencies, a <a href="https://github.com/sklad-dev/overload" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 text-blue-700 hover:text-blue-500">custom Go tool</a>
+    was used. The database was tested using <span class="font-bold">32 parallel connections</span>, sending <span class="font-bold">5 million requests</span> in
+    total with a <span class="font-bold">90/10 write-to-read</span> ratio. The results for the initial <code class="bg-gray-200 px-1.5 py-0.5 rounded font-mono text-sm">writeRecord</code> version are:
   </Paragraph>
   <div class="px-8 mb-4 w-full">
     <table class="w-full text-left text-sm">
@@ -153,7 +153,7 @@
     </table>
   </div>
   <Paragraph class="text-base" leading='relaxed'>
-    Not bad, but I still need to sync the changes. So I updated the method accordingly and measured performance again.
+    Not bad, but the changes still need to be synced. The method was updated accordingly, and performance was measured again.
   </Paragraph>
   <Paragraph class="text-base" leading='relaxed'>
 <pre class="overflow-x-auto bg-gray-200 px-6 py-3 rounded text-sm leading-relaxed font-mono"><code>{secondWalVersionCode}</code></pre>
@@ -182,19 +182,19 @@
     </table>
   </div>
   <Paragraph class="text-base" leading='relaxed'>
-    And at first I thought, well, that's just the cost of durability.
+    At that point, it was tempting to treat this as the cost of durability. After all, the data still has to be synchronized, so what else could be improved?
   </Paragraph>
   <Paragraph class="text-base" leading='relaxed'>
-    But then I realized I could use <code class="bg-gray-200 px-1.5 py-0.5 rounded font-mono text-sm">pwrite</code>
-    along with an atomic variable to track the current file offset. So I updated the implementation to:
+    Well, one option is to use <code class="bg-gray-200 px-1.5 py-0.5 rounded font-mono text-sm">pwrite</code>
+    along with an atomic variable to track the current file offset. The next iteration of the method implementation looked like this:
   </Paragraph>
   <Paragraph class="text-base" leading='relaxed'>
 <pre class="overflow-x-auto bg-gray-200 px-6 py-3 rounded text-sm leading-relaxed font-mono"><code>{thirdWalVersionCode}</code></pre>
   </Paragraph>
   <Paragraph class="text-base" leading='relaxed'>
-    As you can see, I also added an atomic <code class="bg-gray-200 px-1.5 py-0.5 rounded font-mono text-sm">u64</code> to track
-    the last synchronized offset and an atomic <code class="bg-gray-200 px-1.5 py-0.5 rounded font-mono text-sm">bool</code> flag
-    to ensure that only one thread performs synchronization at a time.
+    As you can see, there is an atomic <code class="bg-gray-200 px-1.5 py-0.5 rounded font-mono text-sm">u64</code> variable
+    to track the last synchronized offset and an atomic <code class="bg-gray-200 px-1.5 py-0.5 rounded font-mono text-sm">bool</code>
+    flag to ensure that only one thread performs synchronization at a time.
   </Paragraph>
   <Paragraph class="text-base" leading='relaxed'>
     How did this affect performance?
@@ -220,7 +220,7 @@
     </table>
   </div>
   <Paragraph class="text-base" leading='relaxed'>
-    Much better! But there's still a durability issue with this implementation. Consider the following scenario:
+    Much better. But there is still a durability issue with this implementation. Consider the following scenario:
   </Paragraph>
   <ol type=1 start=1 class="leading-relaxed text-base px-16 mb-4 list-decimal ml-4">
     <li><span class="font-bold">Thread 1</span> starts <code class="bg-gray-200 px-1.5 py-0.5 rounded font-mono text-sm">self.file.sync()</code></li>
@@ -233,14 +233,14 @@
     The client believes the data was safely persisted, but on restart, the database won't be able to recover it.
   </Paragraph>
   <Paragraph class="text-base" leading='relaxed'>
-    So in the end, I decided to keep a mutex for WAL synchronization. But the mutex can lock just the parts where threads compete to decide who performs the sync:
+    In the end, a mutex is still needed for WAL synchronization. But the mutex only needs to guard the parts where threads compete to decide who performs the sync:
   </Paragraph>
   <Paragraph class="text-base" leading='relaxed'>
-<pre class="overflow-x-auto bg-gray-200 px-6 py-3 rounded text-sm leading-relaxed font-mono"><code>{forthWalVersionCode}</code></pre>
+<pre class="overflow-x-auto bg-gray-200 px-6 py-3 rounded text-sm leading-relaxed font-mono"><code>{fourthWalVersionCode}</code></pre>
   </Paragraph>
   <Paragraph class="text-base" leading='relaxed'>
-    In this implementation, a thread will wait for other threads writing at smaller offsets to finish before attempting to acquire the synchronization lock.
-    Its performance is on par with the original one without proper synchronization, and so far I haven't spotted any durability issues or WAL corruption.
+    In this implementation, a thread waits for other threads writing at smaller offsets to finish before attempting to acquire the synchronization lock.
+    Its performance is on par with the original implementation without proper synchronization, and no durability issues or WAL corruption have been observed so far.
     Here are the latest latency numbers:
   </Paragraph>
   <div class="px-8 mb-4 w-full">
@@ -264,11 +264,8 @@
     </table>
   </div>
   <Paragraph class="text-base" leading='relaxed'>
-    This is the implementation I have right now. I'm planning to take a short break from performance experiments and then focus on a few robustness improvements:
+    This is where the WAL stands for now. The next step is to focus on recovery guarantees rather than latency numbers:
+    record framing, checksums, and clearer handling of sync failures.
   </Paragraph>
-  <ol type=1 start=1 class="leading-relaxed text-base px-16 mb-4 list-decimal ml-4">
-    <li>I need to prepend each WAL record with its length and add a per-record checksum for crash recovery.</li>
-    <li>I want to add a failed sync counter to prevent cascading retries on sync failure.</li>
-  </ol>
   <GithubButton class="w-full flex justify-center mt-8 mb-2" />
 </div>
