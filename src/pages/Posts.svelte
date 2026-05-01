@@ -7,7 +7,7 @@
   <Paragraph>
     <a href="#/posts/wal" class="group w-full border border-gray-200 hover:border-gray-900 transition-colors p-6 flex flex-col gap-2">
       <div class="flex items-center justify-between">
-        <span class="text-xs font-medium uppercase tracking-widest">April 26, 2026</span>
+        <span class="text-xs font-medium uppercase tracking-widest">May 1, 2026</span>
       </div>
       <p class="text-xl font-semibold tracking-tight py-0.5 w-fit">WAL: an ongoing story</p>
       <p class="text-sm leading-relaxed">
