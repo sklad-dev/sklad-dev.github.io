@@ -15,7 +15,7 @@
 <div class="w-full flex flex-col items-center pt-8 pb-16 bg-linear-to-br from-[#ccff00] to-[#2200cc]/80 from-10%">
   <div class="w-full md:max-w-3xl">
     <Paragraph class="text-4xl md:text-5xl font-extrabold tracking-tight">
-      A Lightweight Key-Value Database Built in Zig
+      A Lightweight Key-Value Database for IoT and Edge, Built in Zig
     </Paragraph>
     <Paragraph class="text-base" leading='relaxed'>
       Inspired by event-driven systems, Sklad uses an <span class="font-extrabold">asynchronous</span> task queue and <span class="font-extrabold">lock-free</span> data structures to achieve predictable performance and low tail latencies.
